@@ -16,6 +16,12 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+  # get '/restaurants/:id/chef'
+  def chef
+    @restaurant = Restaurant.find(params[:id])
+    @chef = @restaurant.chef
+  end
+
   # get 'localhost/restaurants/new'
   def new
     @restaurant = Restaurant.new

@@ -15,8 +15,16 @@ Rails.application.routes.draw do
   # GET /restaurants/top
   # get '/restaurants/top', to: 'restaurants#top'
   resources :restaurants do
+
+    # non-parametric custom URL
     collection do
       get :top
+    end
+
+    # get '/restaurants/:id/chef', to: 'restaurants#chef'
+    # parametric custom URL
+    member do
+      get :chef
     end
   end
 end

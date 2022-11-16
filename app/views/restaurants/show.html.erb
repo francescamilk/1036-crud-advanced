@@ -3,6 +3,8 @@
 <p><%= @restaurant.address %></p>
 <p><%= "⭐" * @restaurant.rating %></p>
 
+<p><%= link_to "More on the chef", chef_restaurant_path %></p>
+
 <%= link_to "Back", restaurants_path %> |
 <%= link_to "Edit", edit_restaurant_path(@restaurant) %> |
 <%= link_to "Delete",
