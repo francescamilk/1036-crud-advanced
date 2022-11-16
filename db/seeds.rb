@@ -7,6 +7,7 @@ puts "Creating restaurants..."
   resto = Restaurant.create!(
     name: Faker::Restaurant.name,
     address: Faker::Address.city,
+    chef: Faker::Name.name,
     rating: rand(1..5)
   )
 
