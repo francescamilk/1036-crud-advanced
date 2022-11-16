@@ -1,29 +1,15 @@
 Rails.application.routes.draw do
-  # # Read all
-  # get "restaurants", to: "restaurants#index"
-  # # Create
-  # get "restaurants/new", to: "restaurants#new", as: :new_restaurant
-  # post "restaurants", to: "restaurants#create"
-  # # Read one
-  # get "restaurants/:id", to: "restaurants#show", as: :restaurant
-  # # Update
-  # get "restaurants/:id/edit", to: "restaurants#edit", as: :edit_restaurant
-  # patch "restaurants/:id", to: "restaurants#update"
-  # # Delete
-  # delete "restaurants/:id", to: "restaurants#destroy"
-
-  # GET /restaurants/top
-  # get '/restaurants/top', to: 'restaurants#top'
   resources :restaurants do
-
-    # non-parametric custom URL
+    
     collection do
+      # non-parametric custom URL
+      # get '/restaurants/top', to: 'restaurants#top'
       get :top
     end
 
-    # get '/restaurants/:id/chef', to: 'restaurants#chef'
-    # parametric custom URL
     member do
+      # parametric custom URL
+      # get '/restaurants/:id/chef', to: 'restaurants#chef'
       get :chef
     end
 
@@ -31,6 +17,6 @@ Rails.application.routes.draw do
     resources :reviews, only: [ :create ]
   end
 
-  resources :reviews, only: :destroy
   # delete '/reviews/:id', to: 'reviews#destroy'
+  resources :reviews, only: :destroy
 end
