@@ -26,5 +26,11 @@ Rails.application.routes.draw do
     member do
       get :chef
     end
+
+    # get '/restaurants/:id/reviews/new', to: 'reviews#new'
+    resources :reviews, only: [ :new, :create ]
   end
+
+  resources :reviews, only: :destroy
+  # delete '/reviews/:id', to: 'reviews#destroy'
 end

@@ -5,7 +5,10 @@ class Restaurant < ApplicationRecord
   has_many :reviews
   # @restaurant.reviews
 
-  # def capitalize_name
-  #   @name = @name.capitalize
-  # end
+  def compute_rating
+    rating = @restaurant.reviews.map { |review| review.rating }
+    @rating = reviews.sum / reviews.count
+  end
 end
+
+# @my_restaurant.compute_rating
