@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     end
 
     # get '/restaurants/:id/reviews/new', to: 'reviews#new'
-    resources :reviews, only: [ :new, :create ]
+    resources :reviews, only: [ :create ]
   end
 
   resources :reviews, only: :destroy
