@@ -6,6 +6,11 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
+  # get 'localhost/restaurants/top'
+  def top
+    @restaurants = Restaurant.where(rating: 5)
+  end
+
   # get 'localhost/restaurants/:id'
   def show
     @restaurant = Restaurant.find(params[:id])
