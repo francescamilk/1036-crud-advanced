@@ -23,7 +23,7 @@ class RestaurantsController < ApplicationController
   end
 
   # get 'localhost/restaurants/:id/edit'
-  def edit
+  def edit 
     @restaurant = Restaurant.find(params[:id])
   end
 
@@ -42,7 +42,7 @@ class RestaurantsController < ApplicationController
   end
 
   private
-  
+
   def restaurant_params
     params.require(:restaurant).permit(:name, :address, :rating)
   end
